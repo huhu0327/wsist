@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         var transFragment: Fragment = HomeFragment()
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, transFragment as Fragment)
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, transFragment)
                 .commit()
         }
 
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
             if (tempFragment != null && tempFragment != transFragment) {
                 transFragment = tempFragment
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, transFragment as Fragment)
+                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, transFragment)
                     .commit()
             }
 
