@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="홈"
+    <item android:title="@string/home"
           android:id="@+id/action_home"
           android:icon="@drawable/icons8_home_100px"/>
 
-    <item android:title="검색"
+    <item android:title="@string/search"
           android:id="@+id/action_search"
           android:icon="@drawable/icons8_search_100px"/>
 
-    <item android:title="리스트"
+    <item android:title="@string/list"
           android:id="@+id/action_playlists"
           android:icon="@drawable/icons8_list_100px"/>
 
-    <item android:title="설정"
+    <item android:title="@string/setting"
           android:id="@+id/action_settings"
           android:icon="@drawable/icons8_settings_100px"/>
 
