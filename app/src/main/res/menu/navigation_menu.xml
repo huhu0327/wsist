@@ -3,18 +3,18 @@
 
     <item android:title="홈"
           android:id="@+id/action_home"
-          android:icon="@drawable/ic_launcher_background"/>
+          android:icon="@drawable/icons8_home_100px"/>
 
     <item android:title="검색"
           android:id="@+id/action_search"
-          android:icon="@drawable/ic_launcher_background"/>
+          android:icon="@drawable/icons8_search_100px"/>
 
-    <item android:title="플레이리스트"
+    <item android:title="리스트"
           android:id="@+id/action_playlists"
-          android:icon="@drawable/ic_launcher_background"/>
+          android:icon="@drawable/icons8_list_100px"/>
 
     <item android:title="설정"
           android:id="@+id/action_settings"
-          android:icon="@drawable/ic_launcher_background"/>
+          android:icon="@drawable/icons8_settings_100px"/>
 
 </menu>
