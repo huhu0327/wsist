@@ -19,6 +19,7 @@
             app:itemTextColor="@color/bottom_section_color"
             android:background="@color/colorPrimary"
             app:labelVisibilityMode="labeled"
+            app:itemHorizontalTranslationEnabled="false"
             android:id="@+id/bottom"
             app:menu="@menu/navigation_menu"/>
 
