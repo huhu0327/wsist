@@ -13,6 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        createFragment(savedInstanceState)
+    }
+
+    private fun createFragment(savedInstanceState: Bundle?) {
+
         var transFragment: Fragment = HomeFragment()
 
         if (savedInstanceState == null) {
