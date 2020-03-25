@@ -1,14 +1,17 @@
-package com.huhu.wsist
+package com.huhu.wsist.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.huhu.wsist.MainActivity
+import com.huhu.wsist.R
 
-class HomeFragment : Fragment() {
+class ListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        (activity as MainActivity).changeActionBarTitle("리스트")
+        return inflater.inflate(R.layout.fragment_list, container, false)
     }
 }

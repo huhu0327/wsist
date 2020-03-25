@@ -1,4 +1,4 @@
-package presenter
+package com.huhu.wsist.presenter
 
 class LoginPresenter() : LoginContract.Presenter {
 

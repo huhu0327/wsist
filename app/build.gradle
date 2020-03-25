@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 29
@@ -30,14 +30,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:29.1.1'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    implementation "com.android.support:appcompat-v7:28.0.0"
+    implementation "androidx.core:core-ktx:1.2.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation("io.reactivex.rxjava2:rxkotlin:2.0.2")           //rxkotlin
     implementation("com.jakewharton.rxbinding2:rxbinding:2.0.0")    //rxbinding
     implementation("com.android.support:design:27.1.1")             //support design (BottomNavigationView 사용)
+    implementation("com.android.support:recyclerview-v7:28.0.0")     //recycler view
 //    implementation('com.google.android.gms:play-services:7.8.0')    //google drive
 }

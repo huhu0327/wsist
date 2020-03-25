@@ -1,11 +1,11 @@
-package presenter
+package com.huhu.wsist.presenter
 
 interface LoginContract {
     interface View {
         fun transMainActiviy()
     }
 
-    interface Presenter : base.BasePresenter<View> {
+    interface Presenter : com.huhu.wsist.base.BasePresenter<View> {
         fun loginGoogle()
         fun writeLocalDB()
     }

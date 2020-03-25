@@ -3,6 +3,7 @@
           package="com.huhu.wsist">
 
     <application
+            android:name=".MyApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/wsist"
@@ -10,16 +11,16 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashActivity"
+        <activity android:name=".activity.SplashActivity"
                   android:theme="@style/SplashTheme">
-        </activity>
-
-        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.LoginActivity">
         </activity>
 
         <activity android:name=".MainActivity">

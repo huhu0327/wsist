@@ -1,19 +1,46 @@
 package com.huhu.wsist
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.huhu.wsist.databinding.ActivityMainBinding
+import com.huhu.wsist.fragment.HomeFragment
+import com.huhu.wsist.fragment.ListFragment
+import com.huhu.wsist.fragment.SearchFragment
+import com.huhu.wsist.fragment.SettingFragment
+import com.huhu.wsist.presenter.MainContract
+import com.huhu.wsist.presenter.MainPresenter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainContract.View {
 
     private var _bottomNavigationView: BottomNavigationView? = null
 
+    private lateinit var presenter: MainPresenter
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        presenter = MainPresenter().apply {
+            attachView(this@MainActivity)
+        }
 
         createFragment(savedInstanceState)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detachView()
+    }
+
+    fun changeActionBarTitle(name: String) {
+        findViewById<TextView>(R.id.toolbar_title).text = name
+        //val toolbarButton = findViewById<ImageButton>(R.id.toolbar_close)
     }
 
     private fun createFragment(savedInstanceState: Bundle?) {
