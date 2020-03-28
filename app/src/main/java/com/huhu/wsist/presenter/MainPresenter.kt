@@ -1,14 +1,7 @@
 package com.huhu.wsist.presenter
 
-class MainPresenter : MainContract.Presenter {
+import com.huhu.wsist.base.AbstractPresenter
 
-    private var view: MainContract.View? = null
+class MainPresenter : MainContract.Presenter, AbstractPresenter<MainContract.View>() {
 
-    override fun attachView(view: MainContract.View) {
-        this.view = view
-    }
-
-    override fun detachView() {
-        this.view = null
-    }
 }

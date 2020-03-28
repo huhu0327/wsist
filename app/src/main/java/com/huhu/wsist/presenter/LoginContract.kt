@@ -1,12 +1,15 @@
 package com.huhu.wsist.presenter
 
+import com.huhu.wsist.base.BasePresenter
+import com.huhu.wsist.base.BaseView
+
 interface LoginContract {
-    interface View {
-        fun transMainActiviy()
+    interface View : BaseView {
+        fun transMainActivity()
     }
 
-    interface Presenter : com.huhu.wsist.base.BasePresenter<View> {
+    interface Presenter : BasePresenter<View> {
         fun loginGoogle()
-        fun writeLocalDB()
+        fun checkToLogin()
     }
 }

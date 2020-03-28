@@ -1,11 +1,14 @@
 package com.huhu.wsist.presenter
 
+import com.huhu.wsist.base.BasePresenter
+import com.huhu.wsist.base.BaseView
+
 interface MainContract {
-    interface View {
+    interface View : BaseView {
 
     }
 
-    interface Presenter : com.huhu.wsist.base.BasePresenter<View> {
+    interface Presenter : BasePresenter<View> {
         
     }
 }
