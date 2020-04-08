@@ -7,8 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.huhu.wsist.R
+import com.huhu.wsist.base.BaseActivity
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -16,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val logoImg = findViewById<ImageView>(R.id.logo)
-        val textName = findViewById<TextView>(R.id.name)
+        val textName = findViewById<TextView>(R.id.list_titleName)
 
         logoImg.alpha = 0f
         textName.alpha = 0f

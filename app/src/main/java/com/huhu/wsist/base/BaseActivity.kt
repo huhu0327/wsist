@@ -1,22 +1,38 @@
 package com.huhu.wsist.base
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseActivity<in V : BaseView, P : BasePresenter<V>> : AppCompatActivity(), BaseView {
-    protected var presenter: P? = null
-        private set
+open class BaseActivity : AppCompatActivity() {
 
-    abstract fun onCreatePresenter(): P?
+    private lateinit var toast: Toast
+    private var pressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        presenter = onCreatePresenter()
-        presenter?.attachView(this as V)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter?.detachView()
+    override fun onBackPressed() {
+        backPressedForExist()
+    }
+
+    private fun backPressedForExist() {
+        if (System.currentTimeMillis() > pressedTime + 1000) {
+            pressedTime = System.currentTimeMillis()
+
+            showMessage()
+        } else {
+            toast.cancel()
+            this.finish()
+        }
+    }
+
+    private fun showMessage() {
+        toast = Toast.makeText(this, "'뒤로' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT)
+        toast.show()
     }
 }

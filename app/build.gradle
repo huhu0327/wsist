@@ -5,8 +5,10 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
 
 android {
+
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+
     defaultConfig {
         applicationId "com.huhu.wsist"
         minSdkVersion 19
@@ -14,12 +16,42 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a', 'armeabi'
+            universalApk false
+        }
+    }
+
+    packagingOptions {
+        exclude "lib/arm64-v8a/librealm-jni.so"
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     dataBinding {
@@ -28,17 +60,44 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:28.0.0"
-    implementation "androidx.core:core-ktx:1.2.0"
-    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
-    testImplementation 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/libDaumMapAndroid.jar')
+
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
+    implementation 'com.google.dagger:dagger:2.16'
+
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation("io.reactivex.rxjava2:rxkotlin:2.0.2")           //rxkotlin
-    implementation("com.jakewharton.rxbinding2:rxbinding:2.0.0")    //rxbinding
-    implementation("com.android.support:design:27.1.1")             //support design (BottomNavigationView 사용)
-    implementation("com.android.support:recyclerview-v7:28.0.0")     //recycler view
-//    implementation('com.google.android.gms:play-services:7.8.0')    //google drive
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.android.support:design:29.0.3'
+
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-appcompat:3.1.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+
+    implementation 'com.google.http-client:google-http-client-gson:1.19.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation('com.google.apis:google-api-services-drive:v3-rev136-1.25.0')
+            {
+                exclude group: 'org.apache.httpcomponents'
+            }
+    implementation('com.google.api-client:google-api-client-android:1.26.0')
+            {
+                exclude group: 'org.apache.httpcomponents'
+            }
+
+    testImplementation 'junit:junit:4.12'
 }

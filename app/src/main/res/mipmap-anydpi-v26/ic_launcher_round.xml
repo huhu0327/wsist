@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@drawable/icons8_google_48px"/>
+    <background android:drawable="@drawable/login_google"/>
     <foreground android:drawable="@drawable/abc_vector_test"/>
 </adaptive-icon>

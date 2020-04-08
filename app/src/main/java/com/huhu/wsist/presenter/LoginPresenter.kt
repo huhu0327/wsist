@@ -1,6 +1,6 @@
 package com.huhu.wsist.presenter
 
-import com.huhu.wsist.CustomLog
+import com.huhu.wsist.util.CustomLog
 import com.huhu.wsist.base.AbstractPresenter
 import com.huhu.wsist.model.UserInfo
 import io.realm.Realm

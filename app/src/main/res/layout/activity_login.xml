@@ -36,7 +36,7 @@
                     android:layout_width="300dp"
                     android:layout_height="60dp"
                     android:text="구글로 로그인"
-                    android:drawableLeft="@drawable/icons8_google_48px"
+                    android:drawableLeft="@drawable/login_google"
                     android:onClick="@{() -> presenter.loginGoogle()}"/>
         </LinearLayout>
 

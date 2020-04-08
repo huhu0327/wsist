@@ -1,29 +1,45 @@
-package com.huhu.wsist
+package com.huhu.wsist.util
 
 import android.util.Log
+import com.huhu.wsist.MyApplication
 
 class CustomLog {
     companion object {
         const val TAG = "CustomLog"
 
         fun e(message: String) {
-            if (MyApplication.DEBUG) Log.e(TAG, logMsg(message))
+            if (MyApplication.DEBUG) Log.e(
+                TAG,
+                logMsg(message)
+            )
         }
 
         fun w(message: String) {
-            if (MyApplication.DEBUG) Log.w(TAG, logMsg(message))
+            if (MyApplication.DEBUG) Log.w(
+                TAG,
+                logMsg(message)
+            )
         }
 
         fun i(message: String) {
-            if (MyApplication.DEBUG) Log.i(TAG, logMsg(message))
+            if (MyApplication.DEBUG) Log.i(
+                TAG,
+                logMsg(message)
+            )
         }
 
         fun d(message: String) {
-            if (MyApplication.DEBUG) Log.d(TAG, logMsg(message))
+            if (MyApplication.DEBUG) Log.d(
+                TAG,
+                logMsg(message)
+            )
         }
 
         fun v(message: String) {
-            if (MyApplication.DEBUG) Log.v(TAG, logMsg(message))
+            if (MyApplication.DEBUG) Log.v(
+                TAG,
+                logMsg(message)
+            )
         }
 
         private fun logMsg(message: String): String {

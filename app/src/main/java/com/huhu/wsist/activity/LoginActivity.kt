@@ -1,5 +1,6 @@
 package com.huhu.wsist.activity
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,12 +9,13 @@ import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import com.huhu.wsist.MainActivity
 import com.huhu.wsist.R
-import com.huhu.wsist.base.BaseActivity
+import com.huhu.wsist.api.GoogleDriveAPI
+import com.huhu.wsist.base.BaseMvpActivity
 import com.huhu.wsist.databinding.ActivityLoginBinding
 import com.huhu.wsist.presenter.LoginContract
 import com.huhu.wsist.presenter.LoginPresenter
 
-class LoginActivity : BaseActivity<LoginContract.View, LoginContract.Presenter>(), LoginContract.View {
+class LoginActivity : BaseMvpActivity<LoginContract.View, LoginContract.Presenter>(), LoginContract.View {
 
     override fun onCreatePresenter() = LoginPresenter()
 
@@ -34,6 +36,25 @@ class LoginActivity : BaseActivity<LoginContract.View, LoginContract.Presenter>(
             transMainActivity()
         }
 
+        //GoogleDriveAPI.requestSingIn(this)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+         super.onActivityResult(requestCode, resultCode, data)
+
+        when (requestCode) {
+            GoogleDriveAPI.REQUEST_CODE.SIGN_IN.code -> {
+                if (resultCode == Activity.RESULT_OK && data != null) {
+
+                }
+            }
+
+            GoogleDriveAPI.REQUEST_CODE.OPEN_DOCUMENT.code -> {
+                if (resultCode == Activity.RESULT_OK && data != null) {
+
+                }
+            }
+        }
     }
 
     override fun transMainActivity() {

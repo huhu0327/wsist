@@ -13,9 +13,9 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
-               android:src="@drawable/icons8_google_48px"/>
+               android:src="@drawable/login_google"/>
 
-    <TextView android:id="@+id/name"
+    <TextView android:id="@+id/list_titleName"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"

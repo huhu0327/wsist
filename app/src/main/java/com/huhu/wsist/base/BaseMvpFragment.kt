@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-abstract class BaseFragment<in V : BaseView, P : BasePresenter<V>> : Fragment(), BaseView {
+abstract class BaseMvpFragment<in V : BaseView, P : BasePresenter<V>> : Fragment(), BaseView {
 
     protected var presenter: P? = null
         private set

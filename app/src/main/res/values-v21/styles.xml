@@ -19,7 +19,7 @@
     </style>
 
     <style name="MyTheme.MyActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-<!--        <item name="android:background">#81CFEB</item>-->
+        <!--        <item name="android:background">#81CFEB</item>-->
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -29,5 +29,11 @@
         <!--Status Bar 글자색깔-->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="SettingsView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">1dp</item>
     </style>
 </resources>

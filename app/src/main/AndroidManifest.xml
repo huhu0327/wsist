@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.huhu.wsist">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
             android:name=".MyApplication"
             android:allowBackup="true"
@@ -9,6 +15,7 @@
             android:label="@string/wsist"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
             android:theme="@style/AppTheme">
 
         <activity android:name=".activity.SplashActivity"
@@ -23,9 +30,11 @@
         <activity android:name=".activity.LoginActivity">
         </activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:windowSoftInputMode="adjustNothing">
         </activity>
 
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="b3ecd1cc63d3069594cea72849db0e92"/>
     </application>
 
 </manifest>

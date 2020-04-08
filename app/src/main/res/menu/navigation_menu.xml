@@ -3,18 +3,22 @@
 
     <item android:title="@string/home"
           android:id="@+id/action_home"
-          android:icon="@drawable/icons8_home_100px"/>
+          android:icon="@drawable/main_home"/>
 
     <item android:title="@string/search"
           android:id="@+id/action_search"
-          android:icon="@drawable/icons8_search_100px"/>
+          android:icon="@drawable/main_search"/>
+
+    <item android:title="@string/map"
+          android:id="@+id/action_map"
+          android:icon="@drawable/main_map"/>
 
     <item android:title="@string/list"
           android:id="@+id/action_playlists"
-          android:icon="@drawable/icons8_list_100px"/>
+          android:icon="@drawable/main_list"/>
 
     <item android:title="@string/setting"
           android:id="@+id/action_settings"
-          android:icon="@drawable/icons8_settings_100px"/>
+          android:icon="@drawable/main_setting"/>
 
 </menu>
